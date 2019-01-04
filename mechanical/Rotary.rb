@@ -13,6 +13,9 @@
 # will be triggered if an inappropriate technique is used on storage where
 # it makes no sense.
 
-class Rotary
+require 'garnets/virtual.rb'
 
+class Rotary
+    virtual :max_spindle_rpm
 end
+

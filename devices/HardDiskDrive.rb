@@ -20,7 +20,7 @@ require 'mechanical/NonContact.rb'
 require 'mechanical/Rotary.rb'
 require 'physics/Magnetic.rb'
 
-class HardDiskDrive < Media
+class HardDiskDrive < BlockDevice
     include Fixed
     include Magnetic
     include NonContact

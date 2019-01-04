@@ -1,18 +1,15 @@
-# 8Track.rb
-# Initial author: Matt Heck
-# Creation Date:  02JAN2019
+# cruftmaster/devices/DVDDashRDrive.rb
 #
 # Copyright (c)2018-2019 Hard Problems Group, LLC
 # Released under the MIT License.
 # For details, please see:
 # https://cruftmaster.hardproblemsgroup.com
-#
-# 8Track.rb
-# ----------------------
-# FIXME
 
-class EightTrack
+require "DVDROMDrive.rb"
+
+class DVDDashRDrive < DVDROMDrive
     def @noun
-        "8-Track"
+        "DVD-R drive"
     end
 end
+

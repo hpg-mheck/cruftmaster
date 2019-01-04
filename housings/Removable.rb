@@ -12,13 +12,25 @@
 #
 # This mixin should be used to indicate that the media for a storage device
 # is removable.
-require 'housings/fixed'
-require 'mechanical/rotary'
-require 'physics/magnetic'
 
-class Fixed
+require "garnets/virtual.rb"
+require 'housings/fixed.rb'
+require 'mechanical/rotary.rb'
+require 'physics/magnetic.rb'
+
+class Removable
     def removable?
-        return false
+        return true
     end
+
+    virtual close_tray
+    virtual eject
+    virtual open_tray
+
+    virtual media_blank?
+    virtual media_present?
+    virtual tray_closed?
+    virtual tray_open?
+
 end
 

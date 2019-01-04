@@ -1,4 +1,4 @@
-# 8Track.rb
+# ISO9660.rb
 # Initial author: Matt Heck
 # Creation Date:  02JAN2019
 #
@@ -7,12 +7,14 @@
 # For details, please see:
 # https://cruftmaster.hardproblemsgroup.com
 #
-# 8Track.rb
+# ISO9660.rb
 # ----------------------
 # FIXME
 
-class EightTrack
+require "StandardBase"
+
+class ISO9660 < StandardBase
     def @noun
-        "8-Track"
+        "ISO 9660"
     end
 end

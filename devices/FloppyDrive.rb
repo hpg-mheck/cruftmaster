@@ -17,12 +17,13 @@
 # which have a moderate tolerance for mechanical shock while operating, and
 # require occasional head cleaning.
 
+require "BlockDevice.rb"
 require 'housings/Removable.rb'
 require 'mechanical/Contact.rb'
 require 'mechanical/Rotary.rb'
 require 'physics/Magnetic.rb'
 
-class FloppyDrive < Media
+class FloppyDrive < BlockDevice
     include Contact
     include Magnetic
     include Removable
