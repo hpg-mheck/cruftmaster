@@ -12,3 +12,5 @@ def detect_device(device_path)
     # Find the features line, and rule drive generations and feature sets in or out.
     
 end
+
+

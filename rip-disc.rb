@@ -13,6 +13,8 @@ require './Logging.rb'
 # You're ripping a giant pile of scratched discs.
 # A sense of humor is not optional.
 require './humor.rb'
+
+require './devices/DeviceDetector.rb'
 require './devices/CDROMDrive.rb'
 
 $exit_requested=false
@@ -24,7 +26,8 @@ def nowstr
 end
 
 $ripdev="/dev/sr0"
-$staging="/home/mheck/mnt/DISASTER AREA/disc-archiving"
+#$staging="/home/mheck/mnt/DISASTER AREA/disc-archiving"
+$staging="/home/mheck/disc-archive"
 $startedat=nowstr()
 $safetyfilename="#{$staging}/cruftmaster.safety"
 
@@ -41,7 +44,7 @@ end
 
 
 # ################### MAIN LOOP #################### #
-$ripdev = detect_drive("/dev/sr0")
+$ripdev = detect_device("/dev/sr0")
 
 def main_loop
     # Install CTRL-C handler
