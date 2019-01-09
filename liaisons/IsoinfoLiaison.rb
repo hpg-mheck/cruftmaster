@@ -1,4 +1,4 @@
-# cruftmaster/Liasons/HwinfoLiaison.rb
+# cruftmaster/Liasons/IsoinfoLiaison.rb
 #
 # Copyright (c)2018-2019 Hard Problems Group, LLC
 # Released under the MIT License.
@@ -9,11 +9,11 @@ require 'singleton'
 
 require_relative 'LiaisonBase.rb'
 
-class HwinfoLiaison < LiaisonBase
+class IsoinfoLiaison < LiaisonBase
     include Singleton
 
     def get_command
-        return 'hwinfo'
+        return 'iso-info'
     end
 
     def parse(command_options, output)

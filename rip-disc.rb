@@ -8,6 +8,13 @@
 # https://cruftmaster.hardproblemsgroup.com
 
 require './prerequisites.rb'
+
+# If this fails, the support functions will print helpful information.  Hopefully.
+if !(all_required_gems_available? and all_required_programs_available?)
+    STDERR.puts "Thank you for failing with cruftmaster.".red
+    exit -1
+end
+
 require './Logging.rb'
 
 # You're ripping a giant pile of scratched discs.
@@ -39,7 +46,6 @@ if !File.exists?("#{$staging}/cruftmaster.safety")
            $staging.cyan+", looks correct, and that any filesystem that should be " +
            "mounted there indeed is, then run '" + "touch #{$safetyfilename}".yellow + "'.")
 end
-
 
 
 
