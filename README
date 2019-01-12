@@ -7,3 +7,54 @@ Matt Heck
 mheck@hardproblemsgroup.com
 
 
+cruftmaster
+===========
+
+Do you have a pile of old recordable CDs, DVDs, or Blu-Ray discs?
+They're all in cases, right?  Sealed?  In climate-controlled storage?
+Not so much?
+Oh dear.
+
+While a 2007 report from the National Institute of Stanadards and Technology, prepared primarily for
+the Library of Congress, showed that some discs were predicted to have lifespans up to 40 years, they
+found that others might fail in 10-15 years.
+
+And, all of those discs have one thing in common: they assumed people were storing them a lot better
+than you probably are.  Specifically, in jewel cases, on shelves, in buildings with constant humidity
+and temperature.
+
+If you've got a binder full of optical media sitting in your garage, or a nice hot storage unit that
+gets wet when it rains, I hate to break it to you, but you're not looking at 40 year media life.
+You're looking at more like 7-10 year media life, and you need to start transferring that stuff right
+now-- and not all of those transfers are going to work.
+
+That's right-- what would have been a technical debt problem a few years earlier, has now turned into
+a data recovery problem.  Oh, heavens.  What to do?
+
+Well, as it happens, solutions exist.  The problem is that they tend to come in two flavors: very
+comprehensive, but very expensive, commercial forensic recovery software, suitable for law enforcement
+usage with minimal training, and "open source" utilities, which are free to use, but quite arcane.
+These can do the same job as much of the commercial software-- sometimes more-- but you need to get
+familiar with about forty of them.
+
+Meanwhile, if you do spring for the commercial stuff, you may find it doesn't fit your workflow very
+well.  Having to clear the big pile of CDs off the kitchen table because it's time for dinner isn't
+something that comes up in an enterprise setting-- it feels ridiculous, and it's frustrating.  But it
+totally happens, and you need a workflow that can deal wih it.
+
+The cruftmaster project is designed to provide a set of utilities that can make working with all these
+different command-line utilities easier.  It aims to provide a consistent way to rapidly archive
+optical discs in a sensible way, and to allow for a rapid first pass, followed by deeper work at a
+later date.
+
+It is designed, first and foremost, to kill excuses for not archiving old media-- because the longer
+you wait, the less you're going to get back off of it.
+
+Watch this space!  Changes will be rapid and frequent.  A call for contributors will happen around
+March 15th, 2019.
+
+Matt Heck
+President
+Hard Problems Group, LLC
+12JAN2019
+Henderson, NV
