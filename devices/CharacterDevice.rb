@@ -6,6 +6,13 @@
 # https://cruftmaster.hardproblemsgroup.com
 
 require "DeviceBase.rb"
-class CharacterDevice < DeviceBase
 
+class CharacterDevice < DeviceBase
+    def noun
+        "character device"
+    end
+
+    def plural
+        "character devices"
+    end
 end

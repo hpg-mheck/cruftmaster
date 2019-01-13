@@ -10,51 +10,138 @@ mheck@hardproblemsgroup.com
 cruftmaster
 ===========
 
+1   Introduction
+
 Do you have a pile of old recordable CDs, DVDs, or Blu-Ray discs?
-They're all in cases, right?  Sealed?  In climate-controlled storage?
+
+They're all in cases, right?
+Sealed?
+In climate-controlled storage?
+
 Not so much?
+
 Oh dear.
 
-While a 2007 report from the National Institute of Stanadards and Technology, prepared primarily for
-the Library of Congress, showed that some discs were predicted to have lifespans up to 40 years, they
-found that others might fail in 10-15 years.
+While a 2007 report from the National Institute of Stanadards and Technology
+[1], prepared primarily for the Library of Congress, showed that some discs
+were predicted to have lifespans up to 40 years, they found that others might
+fail in 10-15 years.
 
-And, all of those discs have one thing in common: they assumed people were storing them a lot better
-than you probably are.  Specifically, in jewel cases, on shelves, in buildings with constant humidity
-and temperature.
+And, all of those discs have one thing in common: they assumed people were
+storing them a lot better than you probably are.  Specifically, in jewel
+cases, on shelves, in buildings with constant humidity and temperature.
 
-If you've got a binder full of optical media sitting in your garage, or a nice hot storage unit that
-gets wet when it rains, I hate to break it to you, but you're not looking at 40 year media life.
-You're looking at more like 7-10 year media life, and you need to start transferring that stuff right
+If you've got a binder full of optical media sitting in your garage, or a
+nice hot storage unit that gets wet when it rains, I hate to break it to you,
+but you're not looking at 40 year media life.  You're looking at more like
+7-10 year media life, and you need to start transferring that stuff right
 now-- and not all of those transfers are going to work.
 
-That's right-- what would have been a technical debt problem a few years earlier, has now turned into
-a data recovery problem.  Oh, heavens.  What to do?
+That's right-- what would have been a technical debt problem a few years
+earlier, has now turned into a data recovery problem.
 
-Well, as it happens, solutions exist.  The problem is that they tend to come in two flavors: very
-comprehensive, but very expensive, commercial forensic recovery software, suitable for law enforcement
-usage with minimal training, and "open source" utilities, which are free to use, but quite arcane.
-These can do the same job as much of the commercial software-- sometimes more-- but you need to get
-familiar with about forty of them.
+Oh, heavens.  What to do?
 
-Meanwhile, if you do spring for the commercial stuff, you may find it doesn't fit your workflow very
-well.  Having to clear the big pile of CDs off the kitchen table because it's time for dinner isn't
-something that comes up in an enterprise setting-- it feels ridiculous, and it's frustrating.  But it
+Well, as it happens, solutions exist.  The problem is that they tend to come
+in two flavors: very comprehensive, but very expensive; and free, but piecemeal
+and byzantine.
+
+Commercial forensic recovery software, suitable for law enforcement usage with
+minimal training, can provide a good "one stop shop", but is not really
+suitable for the small archivist with a minimal budget.  "Open source"
+utilities are quite capable, and free to use, but they tend to be purpose-
+specific, quirky, and totally unlike each other in terms of options-- and you
+need to be familiar with about forty of them.
+
+Even if you do spring for the commercial stuff, you may find it doesn't fit
+your workflow very well.  Having to clear the big pile of CDs off the kitchen
+table because it's time for dinner isn't something that comes up in an
+enterprise setting-- it feels ridiculous, and it's frustrating.  But it
 totally happens, and you need a workflow that can deal wih it.
 
-The cruftmaster project is designed to provide a set of utilities that can make working with all these
-different command-line utilities easier.  It aims to provide a consistent way to rapidly archive
-optical discs in a sensible way, and to allow for a rapid first pass, followed by deeper work at a
-later date.
+Cruftmaster is designed to provide a set of utilities that can make working
+with the wide variety of open source command-line utilities available for
+Linux easier.  It aims to provide a consistent way to rapidly archive optical
+discs in a sensible way, going to an uncommon amount of effort to figure out
+a sensible name for a disc, and using rapid first passes, followed by deeper
+recovery work either on the spot, or at a later date.
 
-It is designed, first and foremost, to kill excuses for not archiving old media-- because the longer
-you wait, the less you're going to get back off of it.
+It is designed, first and foremost, to kill excuses for not archiving old
+media-- because the longer you wait, the less you're going to get back off of
+it.
 
-Watch this space!  Changes will be rapid and frequent.  A call for contributors will happen around
-March 15th, 2019.
+Cruftmaster is also designed for a very specific secondary use case: rapidly
+digesting optical media under time pressure, when the media cannot
+realistically be removed from its storage location.  For further information
+about this use case, please contact me.
+
+Watch this space!  Changes will be rapid and frequent.  A call for
+contributors will happen around March 15th, 2019.
+
+For details on inquiries, please contact:
+mheck@hardproblemsgroup.com
 
 Matt Heck
 President
 Hard Problems Group, LLC
-12JAN2019
 Henderson, NV
+12JAN2019
+
+
+[1] "Final Report: NIST/Library of Congress (LC) Optical Disc Longevity
+    Study".  September, 2007.
+    https://www.loc.gov/preservation/resources/rt/NIST_LC_OpticalDiscLongevity.pdf
+
+
+
+2   Installation
+
+At present, cruftmaster is in early development.  Cruftmaster runs a large
+number of special-purpose utilities from a set of Ruby scripts.  Therefore the
+best thing to do is currently this:
+
+1. Ensure you are working in a "login shell".  Check your terminal program's
+settings until you find that option, and turn it on.  (Practically all of
+them either use login shells by default, or offer an option to do so.)  This
+makes things easier for rvm.
+
+2. Install rvm, the Ruby Version Manager.  You can find that here:
+
+    https://rvm.io/rvm/install
+
+3. Log out of everything and log back in.  (Or not.  But I recommend it, if
+   you've just installed rvm.)
+
+4. Using rvm, install Ruby 2.5.3, and use it:
+
+    rvm install 2.5.3
+    rvm use 2.5.3
+
+5. If this user accounts is going to be used solely for cruftmaster, or if
+   you don't otherwise use Ruby, you might as well set the default version
+   to the right one:
+
+    rvm default 2.5.3
+
+6. Check out the cruftmaster source code:
+
+    git clone git@github.com:hpg-mheck/cruftmaster.git
+
+7. Switch to a feature branch, if desired.  Right now, you definitely want to
+   do this.  At the time of this writing (12JAN2019), this is the best
+   feature branch to evaluate:
+
+    git checkout F001-Refactor
+
+8. Try running rip-disc.rb, the intended main entry point for ripping a single
+   optical disc of unknown provenance.
+
+
+You'll notice that, other than rvm and ruby, I didn't cover prerequisites.
+This is intentional: cruftmaster is supposed to provide some reasonable
+assistance at getting those set up.  So, when you run rip-disc.rb, you'll get
+some notifications that you need to use "gem", ruby's package manager, to
+install some libraries.  Following that, you'll get complaints about missing
+utilities, if any.  I'd like to make sure these capabilities work, so please,
+take a moment to test this before doing the bulk prerequisite installs.
+
